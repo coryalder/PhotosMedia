@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Hq-QF-xoI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="mO9-1o-D4T">
+            <objects>
+                <viewController id="5Hq-QF-xoI" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6PH-vf-adX"/>
+                        <viewControllerLayoutGuide type="bottom" id="f62-ud-uZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xRm-64-aVR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRA-Ha-gMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="272"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MediaController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-92-X6S">
+                                <rect key="frame" x="263" y="470" width="75" height="30"/>
+                                <state key="normal" title="Pick Image"/>
+                                <connections>
+                                    <action selector="pickImageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aQZ-4b-c9k"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ujS-oi-fOi">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="fcJ-fc-GJv"/>
+                                    <constraint firstAttribute="height" constant="240" id="sQp-cx-jzo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PL3-LR-5up">
+                                <rect key="frame" x="264" y="508" width="72" height="30"/>
+                                <state key="normal" title="Play Audio"/>
+                                <connections>
+                                    <action selector="playAudioAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p1i-Lh-XGz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PL3-LR-5up" firstAttribute="top" secondItem="X0c-92-X6S" secondAttribute="bottom" constant="8" id="9Qa-7n-qXq"/>
+                            <constraint firstItem="ujS-oi-fOi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FKQ-iP-88z"/>
+                            <constraint firstItem="X0c-92-X6S" firstAttribute="top" secondItem="ujS-oi-fOi" secondAttribute="bottom" constant="50" id="Rdf-xX-ZMu"/>
+                            <constraint firstItem="PL3-LR-5up" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wmi-70-JNG"/>
+                            <constraint firstItem="X0c-92-X6S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mGg-bk-fRU"/>
+                            <constraint firstItem="ujS-oi-fOi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vZI-MD-SuF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ujS-oi-fOi" id="icj-9Y-4tu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="281"/>
+        </scene>
+    </scenes>
+</document>
