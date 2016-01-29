@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @end
 
@@ -17,27 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-}
-
--(void)viewDidAppear:(BOOL)animated {
     
-    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    
-    pageController.delegate = self;
-    pageController.dataSource = self;
+    self.delegate = self;
+    self.dataSource = self;
     
     
     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MediaController"];
     
-//    UIViewController *viewController = [[UIViewController alloc] init];
-    
-//    viewController.view.backgroundColor = [UIColor orangeColor];
-    
-    [pageController setViewControllers:@[viewController] direction:(UIPageViewControllerNavigationDirectionForward) animated:NO completion:nil];
-    
-    [self presentViewController:pageController animated:NO completion:nil];
+
+    [self setViewControllers:@[viewController] direction:(UIPageViewControllerNavigationDirectionForward) animated:NO completion:nil];
+
 }
 
 
